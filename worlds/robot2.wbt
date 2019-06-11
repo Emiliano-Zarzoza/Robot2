@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.6026422219357486 -0.76470327716719 -0.22814743090840053 5.3894772374912545
-  position 0.6957735813917878 0.8575422461453837 0.8405597760367534
+  orientation 0.4152201312692613 -0.8950522377453728 -0.1627075114914431 5.49445729188289
+  position 0.8007053049006041 0.8693018513897057 0.8745231311178453
 }
 TexturedBackground {
 }
@@ -22,7 +22,7 @@ Robot {
         size 0.1 0.3 0.1
       }
     }
-    HingeJoint {
+    DEF H_REDBOX HingeJoint {
       jointParameters HingeJointParameters {
         axis 0 1 0
         anchor 0 0.2 0
@@ -49,6 +49,63 @@ Robot {
         boundingObject USE G_RED_BOX
         physics Physics {
         }
+      }
+    }
+    DEF H_BLUEBOX HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor 0 0.35 0
+      }
+      device [
+        RotationalMotor {
+          name "servo_motor2"
+          maxVelocity 13.1
+          maxTorque 0.216
+        }
+      ]
+      endPoint Solid {
+        translation 0 0.325 0
+        rotation 1 0 0 0
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.16359197375448234 0.42835126268406193 0.9984283207446403
+            }
+            geometry DEF G_BLUE_BOX Box {
+              size 0.1 0.15 0.1
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE G_BLUE_BOX
+        physics Physics {
+        }
+      }
+    }
+    DEF H_ORANGEBOX HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor 0 0.46 0
+      }
+      device [
+        RotationalMotor {
+          name "servo_motor3"
+          maxVelocity 13.1
+          maxTorque 0.216
+        }
+      ]
+      endPoint Solid {
+        translation 0 0.45999999999999996 0
+        rotation 1 0 0 0
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.9892118715190357 0.4142214084077211 0.09417868314641031
+            }
+            geometry Box {
+              size 0.1 0.12 0.1
+            }
+          }
+        ]
+        name "solid(2)"
       }
     }
   ]

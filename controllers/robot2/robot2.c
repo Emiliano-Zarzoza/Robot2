@@ -40,7 +40,8 @@ int main(int argc, char **argv)
    *  WbDeviceTag my_actuator = wb_robot_get_device("my_actuator");
    */
    WbDeviceTag servo = wb_robot_get_device("servo_motor");
-
+   WbDeviceTag servo2 = wb_robot_get_device("servo_motor2");
+   WbDeviceTag servo3 = wb_robot_get_device("servo_motor3");
 
   /* main loop
    * Perform simulation steps of TIME_STEP milliseconds
@@ -61,6 +62,8 @@ int main(int argc, char **argv)
      * wb_differential_wheels_set_speed(100.0,100.0);
      */
      wb_motor_set_position(servo, PI/4);
+     wb_motor_set_position(servo2, PI/4);
+     wb_motor_set_position(servo3, -PI/4);
 
   };
 
