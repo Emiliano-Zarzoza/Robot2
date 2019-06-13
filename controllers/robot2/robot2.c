@@ -63,7 +63,7 @@ int main(int argc, char **argv)
      */
      wb_motor_set_position(servo, PI/4);
      wb_motor_set_position(servo2, PI/4);
-     wb_motor_set_position(servo3, -PI/4);
+     wb_motor_set_position(servo3, PI/4);
 
   };
 
